@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="checkbox" name="fruit" />A
+<input type="checkbox" name="fruit" />B
+<input type="checkbox" name="fruit" />C
+
+<p id="result">Total Number of Items Selected = <p>
+    <script>
+        showChecked();
+        function showChecked(){
+            document.getElementById("result").textContent = "Total Number of Items Selected = " + document.querySelectorAll("input:checked").length;
+        }
+        document.querySelectorAll("input[name=fruit]").forEach(i=>{
+            i.onclick = function(){
+                showChecked();
+            }
+        });
+    </script>
+</body>
+</html>

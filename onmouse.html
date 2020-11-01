@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>.box {
+        width: 100px;
+        height: 100px;
+        margin: 40px;
+        background: grey;
+        -webkit-transition: -webkit-transform .3s linear;
+    }
+
+    .box.rotate {
+        -webkit-transform: rotate(45deg);
+    }</style>
+</head>
+<body>
+<div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+
+<script>
+    function rotate() {
+        var elements = document.querySelectorAll('.box');
+        [].forEach.call(elements, function(element, i) {
+            setTimeout(function(){ element.classList.add('rotate'); },i*300);
+        });
+    }
+
+    document.querySelector('.container')
+        .addEventListener('click',rotate);
+</script>
+</body>
+</html>
